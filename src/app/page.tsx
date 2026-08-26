@@ -100,7 +100,7 @@ export default async function HomePage() {
           Categorias em <span className="text-azul">destaque</span>
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-          {categorias.map((cat) => (
+          {(categorias || []).map((cat: any) => (
             <Link
               key={cat.id}
               href={`/produtos?categoria=${cat.slug}`}
