@@ -132,6 +132,18 @@ export default function AdminDashboard() {
       }
     }
 
+    if (formData.destaque) {
+      try {
+        await fetch("/api/telegram", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ produto: { ...payload, slug } }),
+        });
+      } catch {
+        // Silencioso — não bloquear o fluxo do admin
+      }
+    }
+
     resetForm();
     loadData();
   };

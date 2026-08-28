@@ -48,7 +48,7 @@ export default async function HomePage() {
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in">
               <Link
                 href="/produtos"
-                className="bg-white text-carvao font-black text-lg px-10 py-4 rounded-full transition-all hover:scale-105 text-center"
+                className="bg-carvao text-white font-black text-lg px-10 py-4 rounded-full border border-white/15 hover:border-azul transition-all hover:scale-105 text-center"
               >
                 Ver catálogo
               </Link>

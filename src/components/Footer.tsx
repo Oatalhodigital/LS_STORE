@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -7,10 +8,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo + descrição */}
           <div className="col-span-1 md:col-span-2">
-            <span className="text-2xl font-black italic tracking-tight">
-              <span className="text-white">LS</span>
-              <span className="text-azul">_STORE</span>
-            </span>
+            <Image
+              src="/ls_store_logo_casual.svg"
+              alt="LS_STORE"
+              width={160}
+              height={36}
+              className="h-8 w-auto mb-4"
+            />
             <p className="text-cinza-claro text-sm mt-4 max-w-md">
               Curadoria de produtos fitness das melhores plataformas. Encontre o
               que precisa para seu treino com a confiança de quem entende do
