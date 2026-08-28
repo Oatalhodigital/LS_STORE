@@ -27,31 +27,31 @@ export default function Header() {
           <nav className="hidden md:flex items-center gap-8">
             <Link
               href="/"
-              className="text-cinza-claro hover:text-white transition-colors font-semibold text-sm"
+              className="text-gray-600 hover:text-[#2F7BFF] transition-colors font-semibold text-sm"
             >
               Início
             </Link>
             <Link
               href="/produtos"
-              className="text-cinza-claro hover:text-white transition-colors font-semibold text-sm"
+              className="text-gray-600 hover:text-[#2F7BFF] transition-colors font-semibold text-sm"
             >
               Produtos
             </Link>
             <Link
               href="/produtos?categoria=roupas"
-              className="text-cinza-claro hover:text-white transition-colors font-semibold text-sm"
+              className="text-gray-600 hover:text-[#2F7BFF] transition-colors font-semibold text-sm"
             >
               Roupas
             </Link>
             <Link
               href="/produtos?categoria=acessorios"
-              className="text-cinza-claro hover:text-white transition-colors font-semibold text-sm"
+              className="text-gray-600 hover:text-[#2F7BFF] transition-colors font-semibold text-sm"
             >
               Acessórios
             </Link>
             <Link
               href="/sobre"
-              className="text-cinza-claro hover:text-white transition-colors font-semibold text-sm"
+              className="text-gray-600 hover:text-[#2F7BFF] transition-colors font-semibold text-sm"
             >
               Sobre
             </Link>
@@ -60,7 +60,7 @@ export default function Header() {
           {/* Botão mobile */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden text-white p-2"
+            className="md:hidden text-gray-900 p-2"
             aria-label="Menu"
           >
             <svg
@@ -86,35 +86,35 @@ export default function Header() {
             <Link
               href="/"
               onClick={() => setMenuOpen(false)}
-              className="text-cinza-claro hover:text-white transition-colors font-semibold py-2"
+              className="text-gray-600 hover:text-[#2F7BFF] transition-colors font-semibold py-2"
             >
               Início
             </Link>
             <Link
               href="/produtos"
               onClick={() => setMenuOpen(false)}
-              className="text-cinza-claro hover:text-white transition-colors font-semibold py-2"
+              className="text-gray-600 hover:text-[#2F7BFF] transition-colors font-semibold py-2"
             >
               Produtos
             </Link>
             <Link
               href="/produtos?categoria=roupas"
               onClick={() => setMenuOpen(false)}
-              className="text-cinza-claro hover:text-white transition-colors font-semibold py-2"
+              className="text-gray-600 hover:text-[#2F7BFF] transition-colors font-semibold py-2"
             >
               Roupas
             </Link>
             <Link
               href="/produtos?categoria=acessorios"
               onClick={() => setMenuOpen(false)}
-              className="text-cinza-claro hover:text-white transition-colors font-semibold py-2"
+              className="text-gray-600 hover:text-[#2F7BFF] transition-colors font-semibold py-2"
             >
               Acessórios
             </Link>
             <Link
               href="/sobre"
               onClick={() => setMenuOpen(false)}
-              className="text-cinza-claro hover:text-white transition-colors font-semibold py-2"
+              className="text-gray-600 hover:text-[#2F7BFF] transition-colors font-semibold py-2"
             >
               Sobre
             </Link>

@@ -75,10 +75,10 @@ export default function CatalogoClient({
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <h1 className="text-4xl font-black italic text-white mb-2">
-        Catálogo <span className="text-azul">completo</span>
+      <h1 className="text-2xl font-bold text-gray-900 mb-2">
+        Catálogo completo
       </h1>
-      <p className="text-cinza-claro mb-8">
+      <p className="text-gray-500 mb-6">
         {produtosFiltrados.length}{" "}
         {produtosFiltrados.length === 1
           ? "produto encontrado"
@@ -86,7 +86,7 @@ export default function CatalogoClient({
       </p>
 
       {/* Filtros */}
-      <div className="bg-carvao-card rounded-xl border border-white/5 p-4 mb-8 flex flex-col md:flex-row gap-4">
+      <div className="bg-white rounded-lg border border-gray-200 p-4 mb-6 flex flex-col md:flex-row gap-4">
         {/* Busca */}
         <div className="flex-1">
           <div className="relative">
@@ -95,10 +95,10 @@ export default function CatalogoClient({
               placeholder="Buscar produto..."
               value={busca}
               onChange={(e) => setBusca(e.target.value)}
-              className="w-full bg-carvao border border-white/10 rounded-lg px-4 py-2.5 text-white text-sm placeholder-cinza focus:outline-none focus:border-azul"
+              className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:border-[#2F7BFF]"
             />
             <svg
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-cinza"
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"
               width="18"
               height="18"
               viewBox="0 0 24 24"
@@ -116,7 +116,7 @@ export default function CatalogoClient({
         <select
           value={categoriaFiltro}
           onChange={(e) => setCategoriaFiltro(e.target.value)}
-          className="bg-carvao border border-white/10 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-azul"
+          className="bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 text-gray-900 text-sm focus:outline-none focus:border-[#2F7BFF]"
         >
           <option value="">Todas categorias</option>
           {categorias.map((cat) => (
@@ -132,14 +132,14 @@ export default function CatalogoClient({
           placeholder="Preço máx. (R$)"
           value={precoMax}
           onChange={(e) => setPrecoMax(e.target.value)}
-          className="bg-carvao border border-white/10 rounded-lg px-4 py-2.5 text-white text-sm placeholder-cinza focus:outline-none focus:border-azul w-full md:w-40"
+          className="bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:border-[#2F7BFF] w-full md:w-40"
         />
 
         {/* Ordenar */}
         <select
           value={ordenar}
           onChange={(e) => setOrdenar(e.target.value)}
-          className="bg-carvao border border-white/10 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-azul"
+          className="bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 text-gray-900 text-sm focus:outline-none focus:border-[#2F7BFF]"
         >
           <option value="recentes">Mais recentes</option>
           <option value="az">A-Z</option>
@@ -156,7 +156,7 @@ export default function CatalogoClient({
         </div>
       ) : (
         <div className="text-center py-20">
-          <p className="text-cinza-claro text-lg mb-2">
+          <p className="text-gray-500 text-lg mb-2">
             Nenhum produto encontrado
           </p>
           <button
@@ -165,7 +165,7 @@ export default function CatalogoClient({
               setCategoriaFiltro("");
               setPrecoMax("");
             }}
-            className="text-azul font-bold text-sm hover:text-azul-claro transition-colors"
+            className="text-[#2F7BFF] font-bold text-sm hover:text-[#1A5FDB] transition-colors"
           >
             Limpar filtros
           </button>
