@@ -7,14 +7,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        carvao: "#0B0C0E",
-        "carvao-claro": "#15171A",
-        "carvao-card": "#1A1D21",
         azul: {
           DEFAULT: "#2F7BFF",
           claro: "#5B9BFF",
           escuro: "#1A5FDB",
         },
+        preto: "#111111",
+        borda: "#E5E7EB",
+        fundo: "#FFFFFF",
+        "fundo-alt": "#F5F5F5",
         cinza: {
           claro: "#9CA3AF",
           DEFAULT: "#6B7280",
