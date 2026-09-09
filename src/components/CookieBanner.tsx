@@ -26,9 +26,9 @@ export default function CookieBanner() {
   if (!show) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 bg-carvao-claro border-t border-azul/30 p-4 animate-fade-in">
+    <div className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t-2 border-azul shadow-lg p-4 animate-fade-in">
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p className="text-cinza-claro text-sm text-center sm:text-left">
+        <p className="text-gray-600 text-sm text-center sm:text-left">
           Usamos cookies para melhorar sua experiência e rastrear o desempenho
           de nossas campanhas. Ao continuar, você concorda com nossa{" "}
           <Link href="/privacidade" className="text-azul underline">
@@ -39,7 +39,7 @@ export default function CookieBanner() {
         <div className="flex gap-3 shrink-0">
           <button
             onClick={handleDecline}
-            className="text-cinza-claro hover:text-white text-sm font-semibold px-4 py-2 transition-colors"
+            className="text-gray-600 hover:text-preto text-sm font-semibold px-4 py-2 transition-colors"
           >
             Recusar
           </button>

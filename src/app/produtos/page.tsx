@@ -23,7 +23,7 @@ export default async function ProdutosPage() {
     <Suspense
       fallback={
         <div className="max-w-7xl mx-auto px-4 py-8">
-          <p className="text-cinza-claro">Carregando...</p>
+          <p className="text-gray-500">Carregando...</p>
         </div>
       }
     >

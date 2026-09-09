@@ -186,19 +186,19 @@ export default function AdminDashboard() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <p className="text-cinza-claro">Carregando...</p>
+        <p className="text-gray-500">Carregando...</p>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-carvao">
+    <div className="min-h-screen bg-fundo-alt">
       {/* Top bar */}
-      <header className="border-b border-white/5 bg-carvao-card">
+      <header className="border-b border-borda bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <span className="text-xl font-black italic">
-              <span className="text-white">LS</span>
+              <span className="text-gray-900">LS</span>
               <span className="text-azul">_STORE</span>
             </span>
             <span className="text-cinza text-sm">Admin</span>
@@ -207,13 +207,13 @@ export default function AdminDashboard() {
             <a
               href="/"
               target="_blank"
-              className="text-cinza-claro text-sm hover:text-azul transition-colors"
+              className="text-gray-600 text-sm hover:text-azul transition-colors"
             >
               Ver site
             </a>
             <button
               onClick={handleLogout}
-              className="text-red-400 text-sm hover:text-red-300 transition-colors"
+              className="text-red-600 text-sm hover:text-red-700 transition-colors"
             >
               Sair
             </button>
@@ -223,7 +223,7 @@ export default function AdminDashboard() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex items-center justify-between mb-6">
-          <h1 className="text-2xl font-black italic text-white">
+          <h1 className="text-2xl font-black italic text-gray-900">
             Gerenciar <span className="text-azul">produtos</span>
           </h1>
           <button
@@ -239,40 +239,40 @@ export default function AdminDashboard() {
 
         {/* Form */}
         {showForm && (
-          <div className="bg-carvao-card border border-white/5 rounded-2xl p-6 mb-8">
-            <h2 className="text-lg font-bold text-white mb-4">
+          <div className="bg-white border border-borda rounded-2xl p-6 mb-8 shadow-sm">
+            <h2 className="text-lg font-bold text-gray-900 mb-4">
               {editingId ? "Editar produto" : "Novo produto"}
             </h2>
             <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="md:col-span-2">
-                <label className="text-white text-sm font-bold block mb-1">Nome *</label>
+                <label className="text-gray-900 text-sm font-bold block mb-1">Nome *</label>
                 <input
                   type="text"
                   required
                   value={formData.nome}
                   onChange={(e) => setFormData({ ...formData, nome: e.target.value })}
-                  className="w-full bg-carvao border border-white/10 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-azul"
+                  className="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 text-sm focus:outline-none focus:border-azul"
                 />
               </div>
 
               <div className="md:col-span-2">
-                <label className="text-white text-sm font-bold block mb-1">Descrição *</label>
+                <label className="text-gray-900 text-sm font-bold block mb-1">Descrição *</label>
                 <textarea
                   required
                   rows={3}
                   value={formData.descricao}
                   onChange={(e) => setFormData({ ...formData, descricao: e.target.value })}
-                  className="w-full bg-carvao border border-white/10 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-azul"
+                  className="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 text-sm focus:outline-none focus:border-azul"
                 />
               </div>
 
               <div>
-                <label className="text-white text-sm font-bold block mb-1">Categoria *</label>
+                <label className="text-gray-900 text-sm font-bold block mb-1">Categoria *</label>
                 <select
                   required
                   value={formData.categoria_id}
                   onChange={(e) => setFormData({ ...formData, categoria_id: e.target.value })}
-                  className="w-full bg-carvao border border-white/10 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-azul"
+                  className="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 text-sm focus:outline-none focus:border-azul"
                 >
                   <option value="">Selecione...</option>
                   {categorias.map((cat) => (
@@ -284,24 +284,24 @@ export default function AdminDashboard() {
               </div>
 
               <div>
-                <label className="text-white text-sm font-bold block mb-1">Preço *</label>
+                <label className="text-gray-900 text-sm font-bold block mb-1">Preço *</label>
                 <input
                   type="text"
                   required
                   placeholder="R$ 99,90"
                   value={formData.preco}
                   onChange={(e) => setFormData({ ...formData, preco: e.target.value })}
-                  className="w-full bg-carvao border border-white/10 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-azul"
+                  className="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 text-sm focus:outline-none focus:border-azul"
                 />
               </div>
 
               <div>
-                <label className="text-white text-sm font-bold block mb-1">Plataforma *</label>
+                <label className="text-gray-900 text-sm font-bold block mb-1">Plataforma *</label>
                 <select
                   required
                   value={formData.plataforma}
                   onChange={(e) => setFormData({ ...formData, plataforma: e.target.value })}
-                  className="w-full bg-carvao border border-white/10 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-azul"
+                  className="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 text-sm focus:outline-none focus:border-azul"
                 >
                   {PLATAFORMAS.map((p) => (
                     <option key={p} value={p}>{p}</option>
@@ -310,11 +310,11 @@ export default function AdminDashboard() {
               </div>
 
               <div>
-                <label className="text-white text-sm font-bold block mb-1">Status</label>
+                <label className="text-gray-900 text-sm font-bold block mb-1">Status</label>
                 <select
                   value={formData.status}
                   onChange={(e) => setFormData({ ...formData, status: e.target.value })}
-                  className="w-full bg-carvao border border-white/10 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-azul"
+                  className="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 text-sm focus:outline-none focus:border-azul"
                 >
                   <option value="ativo">Ativo</option>
                   <option value="inativo">Inativo</option>
@@ -322,7 +322,7 @@ export default function AdminDashboard() {
               </div>
 
               <div className="md:col-span-2">
-                <label className="text-white text-sm font-bold block mb-1">
+                <label className="text-gray-900 text-sm font-bold block mb-1">
                   Link de afiliado *
                 </label>
                 <input
@@ -331,12 +331,12 @@ export default function AdminDashboard() {
                   placeholder="https://mercadolivre.com.br/..."
                   value={formData.link_afiliado}
                   onChange={(e) => setFormData({ ...formData, link_afiliado: e.target.value })}
-                  className="w-full bg-carvao border border-white/10 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-azul"
+                  className="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 text-sm focus:outline-none focus:border-azul"
                 />
               </div>
 
               <div className="md:col-span-2">
-                <label className="text-white text-sm font-bold block mb-1">
+                <label className="text-gray-900 text-sm font-bold block mb-1">
                   Imagens (uma URL por linha)
                 </label>
                 <textarea
@@ -344,7 +344,7 @@ export default function AdminDashboard() {
                   placeholder="https://exemplo.com/imagem1.jpg&#10;https://exemplo.com/imagem2.jpg"
                   value={formData.imagens}
                   onChange={(e) => setFormData({ ...formData, imagens: e.target.value })}
-                  className="w-full bg-carvao border border-white/10 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-azul"
+                  className="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 text-sm focus:outline-none focus:border-azul"
                 />
               </div>
 
@@ -356,7 +356,7 @@ export default function AdminDashboard() {
                     onChange={(e) => setFormData({ ...formData, destaque: e.target.checked })}
                     className="w-4 h-4 accent-azul"
                   />
-                  <span className="text-white text-sm font-bold">Destaque (aparece na home)</span>
+                  <span className="text-gray-900 text-sm font-bold">Destaque (aparece na home)</span>
                 </label>
               </div>
 
@@ -370,7 +370,7 @@ export default function AdminDashboard() {
                 <button
                   type="button"
                   onClick={resetForm}
-                  className="border border-white/10 hover:border-white/20 text-cinza-claro font-bold px-6 py-2.5 rounded-lg transition-colors"
+                  className="border border-gray-300 hover:border-gray-400 text-gray-700 font-bold px-6 py-2.5 rounded-lg transition-colors"
                 >
                   Cancelar
                 </button>
@@ -386,15 +386,15 @@ export default function AdminDashboard() {
             placeholder="Buscar produto..."
             value={busca}
             onChange={(e) => setBusca(e.target.value)}
-            className="w-full max-w-md bg-carvao border border-white/10 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-azul"
+            className="w-full max-w-md bg-gray-50 border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 text-sm focus:outline-none focus:border-azul"
           />
         </div>
 
         {/* Tabela */}
-        <div className="bg-carvao-card border border-white/5 rounded-2xl overflow-hidden">
+        <div className="bg-white border border-borda rounded-2xl overflow-hidden shadow-sm">
           <table className="w-full">
             <thead>
-              <tr className="border-b border-white/5">
+              <tr className="border-b border-borda">
                 <th className="text-left text-cinza text-xs uppercase tracking-wider px-4 py-3">Produto</th>
                 <th className="text-left text-cinza text-xs uppercase tracking-wider px-4 py-3 hidden md:table-cell">Categoria</th>
                 <th className="text-left text-cinza text-xs uppercase tracking-wider px-4 py-3 hidden md:table-cell">Preço</th>
@@ -406,34 +406,34 @@ export default function AdminDashboard() {
             <tbody>
               {filtered.length === 0 ? (
                 <tr>
-                  <td colSpan={6} className="text-center text-cinza-claro py-12">
+                  <td colSpan={6} className="text-center text-gray-500 py-12">
                     Nenhum produto encontrado
                   </td>
                 </tr>
               ) : (
                 filtered.map((p) => (
-                  <tr key={p.id} className="border-b border-white/5 hover:bg-white/5">
+                  <tr key={p.id} className="border-b border-borda hover:bg-gray-50">
                     <td className="px-4 py-3">
-                      <p className="text-white text-sm font-bold">{p.nome}</p>
+                      <p className="text-gray-900 text-sm font-bold">{p.nome}</p>
                       {p.destaque && (
                         <span className="text-azul text-xs">★ Destaque</span>
                       )}
                     </td>
-                    <td className="px-4 py-3 text-cinza-claro text-sm hidden md:table-cell">
+                    <td className="px-4 py-3 text-gray-600 text-sm hidden md:table-cell">
                       {p.categoria?.nome || "—"}
                     </td>
-                    <td className="px-4 py-3 text-white text-sm hidden md:table-cell">
+                    <td className="px-4 py-3 text-gray-900 text-sm hidden md:table-cell">
                       {p.preco}
                     </td>
-                    <td className="px-4 py-3 text-cinza-claro text-sm hidden lg:table-cell">
+                    <td className="px-4 py-3 text-gray-600 text-sm hidden lg:table-cell">
                       {p.plataforma}
                     </td>
                     <td className="px-4 py-3">
                       <span
                         className={`text-xs font-bold px-2 py-1 rounded ${
                           p.status === "ativo"
-                            ? "bg-green-500/20 text-green-400"
-                            : "bg-gray-500/20 text-gray-400"
+                            ? "bg-green-100 text-green-700"
+                            : "bg-gray-100 text-gray-500"
                         }`}
                       >
                         {p.status}
@@ -448,7 +448,7 @@ export default function AdminDashboard() {
                       </button>
                       <button
                         onClick={() => handleDelete(p.id)}
-                        className="text-red-400 text-sm font-bold hover:text-red-300 transition-colors"
+                        className="text-red-600 text-sm font-bold hover:text-red-700 transition-colors"
                       >
                         Excluir
                       </button>

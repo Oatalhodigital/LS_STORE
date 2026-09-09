@@ -8,7 +8,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-carvao/95 backdrop-blur-md border-b border-white/5">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b-2 border-azul">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -60,7 +60,7 @@ export default function Header() {
           {/* Botão mobile */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden text-gray-900 p-2"
+            className="md:hidden text-gray-900 p-2 hover:text-azul transition-colors"
             aria-label="Menu"
           >
             <svg
