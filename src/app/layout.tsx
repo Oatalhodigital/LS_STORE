@@ -5,6 +5,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Analytics from "@/components/Analytics";
 import CookieBanner from "@/components/CookieBanner";
+import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -13,6 +15,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "https://ls-store-lac.vercel.app"
+  ),
   title: "LS_STORE — Fitness & Performance",
   description:
     "Curadoria de produtos fitness das melhores plataformas. Roupas, acessórios e equipamentos para seu treino com qualidade garantida.",
@@ -21,6 +26,7 @@ export const metadata: Metadata = {
     title: "LS_STORE — Fitness & Performance",
     description: "Curadoria de produtos fitness das melhores plataformas.",
     type: "website",
+    images: [{ url: "/ls_store_logo_casual.svg" }],
   },
 };
 
@@ -37,6 +43,8 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
         <CookieBanner />
+        <VercelAnalytics />
+        <SpeedInsights />
       </body>
     </html>
   );
