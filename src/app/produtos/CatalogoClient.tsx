@@ -3,6 +3,7 @@
 import { useState, useMemo, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import ProductCard from "@/components/ProductCard";
+import { track } from "@vercel/analytics";
 
 interface Produto {
   id: number;
@@ -115,7 +116,10 @@ export default function CatalogoClient({
         {/* Categoria */}
         <select
           value={categoriaFiltro}
-          onChange={(e) => setCategoriaFiltro(e.target.value)}
+          onChange={(e) => {
+            setCategoriaFiltro(e.target.value);
+            if (e.target.value) track("filtro_categoria", { categoria: e.target.value });
+          }}
           className="bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 text-gray-900 text-sm focus:outline-none focus:border-[#2F7BFF]"
         >
           <option value="">Todas categorias</option>

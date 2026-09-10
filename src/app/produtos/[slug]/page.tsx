@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: produto.nome,
       description: produto.descricao.substring(0, 160),
-      images: imagens.length > 0 ? [{ url: imagens[0] }] : [],
+      images: imagens.length > 0 ? [{ url: imagens[0] }] : [{ url: "/ls_store_logo_casual.svg" }],
       url: `${siteUrl}/produtos/${produto.slug}`,
       type: "website",
     },
@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: "summary_large_image",
       title: produto.nome,
       description: produto.descricao.substring(0, 160),
-      images: imagens.length > 0 ? [imagens[0]] : [],
+      images: imagens.length > 0 ? [imagens[0]] : ["/ls_store_logo_casual.svg"],
     },
   };
 }

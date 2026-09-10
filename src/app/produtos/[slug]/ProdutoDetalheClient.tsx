@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { trackAfiliadoClick } from "@/components/Analytics";
+import { track } from "@vercel/analytics";
 
 interface ProdutoDetalhe {
   id: number;
@@ -41,6 +42,7 @@ export default function ProdutoDetalheClient({
 
   const handleClickAfiliado = async () => {
     trackAfiliadoClick(produto.nome, produto.plataforma);
+    track("clique_afiliado", { produto: produto.nome, plataforma: produto.plataforma });
 
     try {
       const urlParams = new URLSearchParams(window.location.search);
